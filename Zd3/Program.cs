@@ -14,25 +14,25 @@ var rule4 = new Regex("1");
 
 while (true)
 {
-    if (inputBinString.Contains("*1"))
+    if (rule1.IsMatch(inputBinString))
     {
         inputBinString = rule1.Replace(inputBinString, "1*", 1);
         continue;
     }
 
-    if (inputBinString.Contains("*0"))
+    if (rule2.IsMatch(inputBinString))
     {
         inputBinString = rule2.Replace(inputBinString, "0*", 1);
         continue;
     }
 
-    if (inputBinString.Contains('*'))
+    if (rule3.IsMatch(inputBinString))
     {
         inputBinString = rule3.Replace(inputBinString, "0", 1);
         break;
     }
 
-    if (inputBinString.Contains('1'))
+    if (rule4.IsMatch(inputBinString))
     {
         inputBinString = rule4.Replace(inputBinString, "*1", 1);
         continue;
